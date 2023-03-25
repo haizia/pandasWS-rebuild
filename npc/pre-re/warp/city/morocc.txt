@@ -1,0 +1,68 @@
+//==== Lpig script ===========================================
+//= Warp Point script
+//===== By: ==================================================
+//= Lpig
+//===== Current Version: =====================================
+//= 0.1
+//===== Compatible With: =====================================
+//= PandaWS Project
+//===== Description: =========================================
+//= Warp Points for morocc,moc_ruins,morocc_in
+//============================================================
+
+//梦罗克 废墟
+moc_ruins,71,16,0	warp	W-moc_ruins-1	8,2,moc_fild19,71,167
+moc_ruins,54,161,0	warp	W-moc_ruins-2	2,3,moc_pryd01,192,9
+moc_ruins,159,39,0	warp	W-moc_ruins-3	2,4,morocc,30,290
+
+//梦罗克
+morocc,160,297,0	warp	W-morocc-1	2,2,moc_fild07,198,25
+morocc,160,17,0	warp	W-morocc-2	2,2,moc_fild12,159,378
+morocc,24,164,0	warp	W-morocc-3	1,2,moc_fild19,164,107
+morocc,27,294,0	warp	W-morocc-4	2,5,moc_ruins,156,42
+morocc,197,66,0	warp	W-morocc-5	1,1,morocc_in,83,92
+morocc,253,56,0	warp	W-morocc-6	2,1,morocc_in,134,74
+morocc,274,269,0	warp	W-morocc-7	2,2,morocc_in,138,136
+morocc,283,170,0	warp	W-morocc-8	2,2,morocc_in,108,176
+morocc,46,46,0	warp	W-morocc-9	2,1,morocc_in,68,72
+morocc,52,259,0	warp	W-morocc-10	1,2,morocc_in,180,65
+morocc,85,55,0	warp	W-morocc-11	2,2,morocc_in,44,149
+morocc,98,68,0	warp	W-morocc-12	1,1,morocc_in,44,175
+
+//梦罗克 室内
+morocc_in,108,179,0	warp	W-morocc_in-1	2,2,morocc,283,173
+morocc_in,134,77,0	warp	W-morocc_in-2	3,1,morocc,251,59
+morocc_in,136,136,0	warp	W-morocc_in-3	1,4,morocc,271,269
+morocc_in,183,65,0	warp	W-morocc_in-4	2,3,morocc,55,259
+morocc_in,44,146,0	warp	W-morocc_in-5	3,2,morocc,82,52
+morocc_in,44,178,0	warp	W-morocc_in-6	2,2,morocc,100,70
+morocc_in,68,75,0	warp	W-morocc_in-7	2,1,morocc,49,49
+morocc_in,83,90,0	warp	W-morocc_in-8	4,1,morocc,199,64
+morocc_in,105,95,0	warp	W-morocc_in-9	1,3,morocc_in,90,95
+morocc_in,106,123,0	warp	W-morocc_in-10	1,3,morocc_in,90,123
+morocc_in,144,109,0	warp	W-morocc_in-11	3,1,morocc_in,144,125
+morocc_in,144,122,0	warp	W-morocc_in-12	3,1,morocc_in,144,106
+morocc_in,144,151,0	warp	W-morocc_in-13	3,1,morocc_in,144,169
+morocc_in,144,166,0	warp	W-morocc_in-14	3,1,morocc_in,144,148
+morocc_in,149,129,0	warp	W-morocc_in-15	1,2,morocc_in,169,129
+morocc_in,166,130,0	warp	W-morocc_in-16	1,3,morocc_in,146,130
+morocc_in,171,37,0	warp	W-morocc_in-17	4,1,morocc_in,171,52
+morocc_in,171,50,0	warp	W-morocc_in-18	4,1,morocc_in,171,35
+morocc_in,174,109,0	warp	W-morocc_in-19	3,1,morocc_in,174,125
+morocc_in,174,122,0	warp	W-morocc_in-20	3,1,morocc_in,174,106
+morocc_in,174,151,0	warp	W-morocc_in-21	3,1,morocc_in,174,169
+morocc_in,174,166,0	warp	W-morocc_in-22	3,1,morocc_in,174,148
+morocc_in,23,161,0	warp	W-morocc_in-23	1,2,morocc_in,37,161
+morocc_in,34,161,0	warp	W-morocc_in-24	1,2,morocc_in,20,161
+morocc_in,55,123,0	warp	W-morocc_in-25	1,3,morocc_in,71,123
+morocc_in,55,95,0	warp	W-morocc_in-26	1,3,morocc_in,71,95
+morocc_in,57,161,0	warp	W-morocc_in-27	1,3,morocc_in,73,161
+morocc_in,68,123,0	warp	W-morocc_in-28	1,3,morocc_in,52,123
+morocc_in,68,42,0	warp	W-morocc_in-29	2,1,morocc_in,68,65
+morocc_in,68,62,0	warp	W-morocc_in-30	2,1,morocc_in,68,38
+morocc_in,68,95,0	warp	W-morocc_in-31	1,3,morocc_in,52,95
+morocc_in,70,161,0	warp	W-morocc_in-32	1,3,morocc_in,54,161
+morocc_in,86,101,0	warp	W-morocc_in-33	2,1,morocc_in,86,120
+morocc_in,86,117,0	warp	W-morocc_in-34	3,1,morocc_in,86,98
+morocc_in,93,123,0	warp	W-morocc_in-35	1,3,morocc_in,109,123
+morocc_in,93,95,0	warp	W-morocc_in-36	1,3,morocc_in,109,95

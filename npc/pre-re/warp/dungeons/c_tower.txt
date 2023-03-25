@@ -1,0 +1,40 @@
+//==== Lpig script ===========================================
+//= Warp Point script
+//===== By: ==================================================
+//= Lpig
+//===== Current Version: =====================================
+//= 0.1
+//===== Compatible With: =====================================
+//= PandaWS Project
+//===== Description: =========================================
+//= Warp Points for alde_dun01,alde_dun02,alde_dun03
+//============================================================
+
+//艾尔帕兰 钟塔 1层
+c_tower1,123,22,0	warp	W-c_tower1-1	1,1,alde_dun01,297,25
+c_tower1,200,157,0	warp	W-c_tower1-2	1,1,aldebaran,139,131
+c_tower1,235,226,0	warp	W-c_tower1-3	1,1,c_tower2,268,26
+
+//艾尔帕兰 钟塔 2层
+c_tower2,24,24,0	warp	W-c_tower2-1	1,1,alde_dun03,277,178
+c_tower2,273,26,0	warp	W-c_tower2-2	1,1,c_tower1,235,223
+c_tower2,142,283,0	warp	W-c_tower2-3	1,1,c_tower3,65,147
+
+//艾尔帕兰 钟塔 3层
+c_tower3,7,39,0	warp	W-c_tower3-1	1,1,alde_dun01,171,158
+c_tower3,42,41,0	warp	W-c_tower3-2	1,1,alde_dun02,127,169
+c_tower3,212,159,0	warp	W-c_tower3-3	1,1,alde_dun03,276,53
+c_tower3,146,8,0	warp	W-c_tower3-4	1,1,c_tower1,235,223
+c_tower3,60,147,0	warp	W-c_tower3-5	1,1,c_tower2,148,283
+
+//艾尔帕兰 钟塔 4层
+c_tower4,51,156,0	warp	W-c_tower4-1	1,1,alde_dun01,171,158
+c_tower4,37,70,0	warp	W-c_tower4-2	1,1,alde_dun03,277,54
+c_tower4,171,179,0	warp	W-c_tower4-3	1,1,alde_dun03,276,53
+c_tower4,153,107,0	warp	W-c_tower4-4	1,1,c_tower2,228,267
+c_tower4,70,19,0	warp	W-c_tower4-5	2,2,c_tower3,151,8
+c_tower4,68,46,0	warp	W-c_tower4-6	1,1,c_tower4,73,154
+c_tower4,79,49,0	warp	W-c_tower4-7	2,2,c_tower4,204,60
+c_tower4,133,202,0	warp	W-c_tower4-8	1,1,c_tower4,140,149
+c_tower4,198,59,0	warp	W-c_tower4-9	1,1,c_tower4,152,98
+c_tower4,204,57,0	warp	W-c_tower4-10	1,1,c_tower4,65,77

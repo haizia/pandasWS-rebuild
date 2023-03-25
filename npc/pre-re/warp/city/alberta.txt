@@ -1,0 +1,87 @@
+//==== Lpig script ===========================================
+//= Warp Point script
+//===== By: ==================================================
+//= Lpig
+//===== Current Version: =====================================
+//= 0.1
+//===== Compatible With: =====================================
+//= PandaWS Project
+//===== Description: =========================================
+//= Warp Points for alberta, alberta_in
+//============================================================
+
+//艾尔贝塔
+alberta,117,38,0	warp	W-alberta-1	2,2,alberta_in,180,30
+alberta,134,38,0	warp	W-alberta-2	1,1,alberta_in,70,141
+alberta,33,42,0	warp	W-alberta-3	2,2,alberta_in,74,44
+alberta,65,233,0	warp	W-alberta-4	2,2,alberta_in,18,141
+alberta,93,205,0	warp	W-alberta-5	2,2,alberta_in,114,134
+alberta,98,153,0	warp	W-alberta-6	2,2,alberta_in,185,89
+alberta,99,221,0	warp	W-alberta-7	2,2,alberta_in,122,161
+alberta,15,234,0	warp	W-alberta-8	2,5,pay_fild03,388,63
+
+//艾尔贝塔 室内
+alberta_in,189,89,0	warp	W-alberta_in-1	2,2,alberta,102,153
+alberta_in,114,130,0	warp	W-alberta_in-2	2,2,alberta,93,201
+alberta_in,14,141,0	warp	W-alberta_in-3	2,3,alberta,61,233
+alberta_in,180,34,0	warp	W-alberta_in-4	2,2,alberta,117,42
+alberta_in,73,141,0	warp	W-alberta_in-5	2,3,alberta,137,37
+alberta_in,78,44,0	warp	W-alberta_in-6	2,5,alberta,37,41
+alberta_in,125,161,0	warp	W-alberta_in-7	2,2,alberta,102,222
+alberta_in,114,183,0	warp	W-alberta_in-8	1,1,alberta_in,148,186
+alberta_in,152,186,0	warp	W-alberta_in-9	1,1,alberta_in,118,183
+alberta_in,114,49,0	warp	W-alberta_in-10	2,2,alberta_in,155,153
+alberta_in,159,153,0	warp	W-alberta_in-11	2,2,alberta_in,117,49
+alberta_in,114,97,0	warp	W-alberta_in-12	2,2,alberta_in,155,175
+alberta_in,159,175,0	warp	W-alberta_in-13	2,2,alberta_in,117,97
+alberta_in,22,113,0	warp	W-alberta_in-14	3,2,alberta_in,22,134
+alberta_in,22,130,0	warp	W-alberta_in-15	3,2,alberta_in,22,109
+alberta_in,22,153,0	warp	W-alberta_in-16	3,2,alberta_in,22,174
+alberta_in,22,170,0	warp	W-alberta_in-17	3,2,alberta_in,22,149
+alberta_in,24,33,0	warp	W-alberta_in-18	3,2,alberta_in,64,35
+alberta_in,64,31,0	warp	W-alberta_in-19	3,2,alberta_in,24,29
+alberta_in,24,54,0	warp	W-alberta_in-20	3,2,alberta_in,64,53
+alberta_in,64,57,0	warp	W-alberta_in-21	3,2,alberta_in,24,58
+alberta_in,66,113,0	warp	W-alberta_in-22	3,1,alberta_in,66,132
+alberta_in,66,130,0	warp	W-alberta_in-23	3,1,alberta_in,66,111
+alberta_in,66,153,0	warp	W-alberta_in-24	3,2,alberta_in,66,173
+alberta_in,66,170,0	warp	W-alberta_in-25	3,2,alberta_in,66,149
+
+
+alberta,196,213,7	script	贝尔尼#alberta	100,{
+	mes "[水手 贝尔尼]";
+	mes "这该死的天气";
+	mes "最近无风带覆盖了附近的太多海域";
+	mes "*那个东西*的传言没准是真的";
+	next;
+	mes "[水手 贝尔尼]";
+	mes "附近还算安全的去处";
+	mes "也只有一处小岛了";
+	mes "那岛附近有一艘沉船";
+	mes "你最好离那里远一点";
+	mes "那沉船可能不太干净...";
+	close;
+	end;
+OnMinute05:
+OnMinute15:
+OnMinute25:
+OnMinute35:
+OnMinute45:
+OnMinute55:
+OnMinute00:
+OnMinute10:
+OnMinute20:
+OnMinute30:
+OnMinute40:
+OnMinute50:
+	soundeffectall "boatsong"+rand(1,40)+".wav",0,"alberta",167,124,207,178;
+	sleep 8000;
+	npcskilleffect 33,0,0,0;
+	sleep 500;
+	npctalk "前往无名小岛的船入港了!要前往的可以登船了!";
+	sleep 10000;
+	addrid(4,0,167,161,207,170);
+	sleep2 rand(0,2000);
+	warp "alb2trea",60,68;
+	end;
+}

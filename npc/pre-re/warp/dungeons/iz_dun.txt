@@ -1,0 +1,55 @@
+//===== Current Version: =====================================
+//= 0.1
+//===== Compatible With: =====================================
+//= PandaWS Project
+//===== Description: =========================================
+//= Warp Points for in_sphinx1,in_sphinx2,in_sphinx3,in_sphinx4
+//============================================================
+
+//海底洞窟 1层
+iz_dun00,352,342,0	warp	W-iz_dun00-1	5,2,iz_dun01,253,252
+iz_dun00,39,41,0	warp	W-iz_dun00-2	5,2,iz_dun01,41,37
+iz_dun00,168,173,0	warp	W-iz_dun00-3	3,3,izlu2dun,108,88
+
+//海底洞窟 2层
+iz_dun01,253,258,0	warp	W-iz_dun01-1	2,2,iz_dun00,352,337
+iz_dun01,41,32,0	warp	W-iz_dun01-2	2,2,iz_dun00,39,46
+iz_dun01,118,170,0	warp	W-iz_dun01-3	5,2,iz_dun02,236,204
+
+//海底洞窟 3层
+iz_dun02,236,198,0	warp	W-iz_dun02-1	5,3,iz_dun01,118,165
+iz_dun02,339,331,0	warp	W-iz_dun02-2	2,2,iz_dun03,32,63
+
+//海底洞窟 4层
+iz_dun03,29,63,0	warp	W-iz_dun03-1	2,2,iz_dun02,339,328
+iz_dun03,264,245,0	warp	W-iz_dun03-2	1,2,iz_dun04,26,27
+
+//柏伊亚岚岛
+izlu2dun,108,83,0	warp	W-izlu2dun-1	3,2,iz_dun00,168,168
+
+izlu2dun,105,29,7	script	卢登#izlu2dun	98,{
+	mes "[水手 卢登]";
+	mes "往返于伊思鲁德于";
+	mes "柏伊亚岚岛的船会在此停靠";
+	mes "有船抵达的时候我会敲钟告示的";
+	mes "所以别来烦我,让我自己待一会";
+	close;
+	end;
+
+OnMinute08:
+OnMinute18:
+OnMinute28:
+OnMinute38:
+OnMinute48:
+OnMinute58:
+	soundeffectall "boatsong"+rand(1,40)+".wav",0,"izlu2dun",104,26,111,45;
+	sleep 8000;
+	npcskilleffect 33,0,0,0;
+	sleep 500;
+	npctalk "前往伊思鲁德岛的船入港了!要上船的站到码头上来!";
+	sleep 10000;
+	addrid(4,0,105,26,111,31);
+	sleep2 rand(0,2000);
+	warp "izlude",179,209;
+	end;
+}

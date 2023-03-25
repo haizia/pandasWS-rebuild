@@ -1,0 +1,27 @@
+//==== Lpig script ===========================================
+//= Warp Point script
+//===== By: ==================================================
+//= Lpig
+//===== Current Version: =====================================
+//= 0.1
+//===== Compatible With: =====================================
+//= PandaWS Project
+//===== Description: =========================================
+//= Warp Points for prt_maze01,prt_maze02
+//============================================================
+
+//普隆德拉 下水道迷宫 1层
+prt_sewb1,135,248,0	warp	W-prt_sewb1-1	2,2,prt_fild05,274,208
+prt_sewb1,188,247,0	warp	W-prt_sewb1-2	1,3,prt_sewb2,19,19
+//普隆德拉 下水道迷宫 2层
+prt_sewb2,19,12,0	warp	W-prt_sewb2-1	2,2,prt_sewb1,192,247
+prt_sewb2,100,176,0	warp	W-prt_sewb2-2	4,2,prt_sewb2,140,28
+prt_sewb2,140,24,0	warp	W-prt_sewb2-3	4,2,prt_sewb2,100,172
+prt_sewb2,19,175,0	warp	W-prt_sewb2-4	4,2,prt_sewb2,60,28
+prt_sewb2,60,24,0	warp	W-prt_sewb2-5	4,2,prt_sewb2,19,171
+prt_sewb2,180,24,0	warp	W-prt_sewb2-6	4,2,prt_sewb3,180,169
+//普隆德拉 下水道迷宫 3层
+prt_sewb3,180,173,0	warp	W-prt_sewb3-1	4,2,prt_sewb2,180,28
+prt_sewb3,20,185,0	warp	W-prt_sewb3-2	3,2,prt_sewb4,100,92
+//普隆德拉 下水道迷宫 4层
+prt_sewb4,100,96,0	warp	W-prt_sewb4-1	3,2,prt_sewb3,19,180

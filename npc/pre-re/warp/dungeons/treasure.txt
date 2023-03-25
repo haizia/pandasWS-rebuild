@@ -1,0 +1,78 @@
+//==== Lpig script ===========================================
+//= Warp Point script
+//===== By: ==================================================
+//= Lpig
+//===== Current Version: =====================================
+//= 0.1
+//===== Compatible With: =====================================
+//= PandaWS Project
+//===== Description: =========================================
+//= Warp Points for alb2trea,treasure01,treasure02
+//============================================================
+
+//沉船附近岛屿
+alb2trea,88,111,0	warp	W-alb2trea-1	1,1,treasure01,69,24
+
+//艾尔贝塔 沉船遗迹 1层
+treasure01,69,22,0	warp	W-treasure01-1	4,1,alb2trea,85,107
+treasure01,112,164,0	warp	W-treasure01-2	1,4,treasure01,97,164
+treasure01,125,161,0	warp	W-treasure01-3	1,3,treasure01,144,161
+treasure01,142,161,0	warp	W-treasure01-4	1,3,treasure01,123,161
+treasure01,164,114,0	warp	W-treasure01-5	3,1,treasure01,164,88
+treasure01,164,91,0	warp	W-treasure01-6	5,1,treasure01,164,116
+treasure01,99,164,0	warp	W-treasure01-7	1,4,treasure01,114,164
+treasure01,76,111,0	warp	W-treasure01-8	1,3,treasure01,100,111
+treasure01,38,164,0	warp	W-treasure01-9	1,4,treasure01,25,164
+treasure01,40,111,0	warp	W-treasure01-10	1,3,treasure01,67,112
+treasure01,62,111,0	warp	W-treasure01-11	1,3,treasure01,38,111
+treasure01,27,164,0	warp	W-treasure01-12	1,4,treasure01,40,164
+treasure01,69,75,0	warp	W-treasure01-13	2,1,treasure01,69,106
+treasure01,69,125,0	warp	W-treasure01-14	4,1,treasure01,69,142
+treasure01,69,140,0	warp	W-treasure01-15	4,1,treasure01,69,123
+treasure01,98,111,0	warp	W-treasure01-16	1,3,treasure01,74,111
+treasure01,41,37,0	warp	W-treasure01-17	1,3,treasure01,61,37
+treasure01,58,37,0	warp	W-treasure01-18	1,3,treasure01,39,37
+treasure01,69,102,0	warp	W-treasure01-19	2,1,treasure01,69,77
+treasure01,79,37,0	warp	W-treasure01-20	1,3,treasure01,98,37
+treasure01,96,37,0	warp	W-treasure01-21	1,3,treasure01,77,37
+treasure01,69,177,0	warp	W-treasure01-22	3,1,treasure02,102,27
+
+//艾尔贝塔 沉船遗迹 2层
+treasure02,102,24,0	warp	W-treasure02-1	3,1,treasure01,69,179
+treasure02,102,103,0	warp	W-treasure02-2	5,1,treasure02,102,120
+treasure02,102,118,0	warp	W-treasure02-3	5,1,treasure02,102,101
+treasure02,155,128,0	warp	W-treasure02-4	1,1,treasure02,155,97
+treasure02,155,99,0	warp	W-treasure02-5	1,1,treasure02,155,130
+treasure02,49,99,0	warp	W-treasure02-6	1,1,treasure02,49,130
+treasure02,123,72,0	warp	W-treasure02-7	1,4,treasure02,140,72
+treasure02,138,72,0	warp	W-treasure02-8	1,4,treasure02,121,72
+treasure02,49,128,0	warp	W-treasure02-9	1,1,treasure02,49,97
+treasure02,65,72,0	warp	W-treasure02-10	1,4,treasure02,82,72
+treasure02,80,72,0	warp	W-treasure02-11	1,4,treasure02,63,72
+
+alb2trea,58,68,6	script	贝尔尼#alb2trea	100,{
+	mes "[水手 贝尔尼]";
+	mes "我可不是自愿来这地方的";
+	mes "真是太惨了,沉船遗迹里的哪些人";
+	mes "什么时候会有接我离开这里的船";
+	close;
+	end;
+OnMinute00:
+OnMinute10:
+OnMinute20:
+OnMinute30:
+OnMinute40:
+OnMinute50:
+	soundeffectall "boatsong"+rand(1,40)+".wav",0,"alb2trea",167,124,207,178;
+	sleep 8000;
+	npcskilleffect 33,0,0,0;
+	sleep 500;
+	npctalk "前往艾尔贝塔的船入港了!快点上船离开这鬼地方!";
+	sleep 10000;
+	addrid(4,0,25,26,50,65);
+	addrid(4,0,51,26,62,59);
+	sleep2 rand(0,2000);
+	warp "alberta",60,68;
+	end;
+	
+}

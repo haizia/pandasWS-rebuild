@@ -1,0 +1,16 @@
+//==== Lpig script ===========================================
+//= Warp Point script
+//===== By: ==================================================
+//= Lpig
+//===== Current Version: =====================================
+//= 0.1
+//===== Compatible With: =====================================
+//= PandaWS Project
+//===== Description: =========================================
+//= Warp Points for anthell01
+//============================================================
+
+anthell01,253,32,0	warp	W-anthell01-1	1,1,cmd_fild08,340,82
+anthell01,35,267,0	warp	W-anthell01-2	1,1,prt_fild09,240,257
+//anthell01,253,32,0	warp	W-anthell01-3	2,1,anthell02,34,263
+//anthell02,32,267,0	warp	W-anthell02-1	2,2,anthell01,253,35

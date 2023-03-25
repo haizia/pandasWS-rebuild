@@ -1,0 +1,69 @@
+//==== Lpig script ===========================================
+//= Warp Point script
+//===== By: ==================================================
+//= Lpig
+//===== Current Version: =====================================
+//= 0.1
+//===== Compatible With: =====================================
+//= PandaWS Project
+//===== Description: =========================================
+//= Warp Points for prontera,prt_in,prt_church
+//============================================================
+
+//普隆德拉
+prontera,237,317,0	warp	W-prontera-1	2,2,prt_church,100,60
+prontera,156,360,0	warp	W-prontera-2	3,2,prt_fild01,199,30
+prontera,22,203,0	warp	W-prontera-3	2,3,prt_fild05,367,205
+prontera,289,203,0	warp	W-prontera-4	2,3,prt_fild06,27,193
+prontera,156,22,0	warp	W-prontera-5	3,2,prt_fild08,170,375
+prontera,107,215,0	warp	W-prontera-6	2,2,prt_in,240,139
+prontera,120,267,0	warp	W-prontera-7	2,2,prt_in,180,97
+prontera,133,183,0	warp	W-prontera-8	2,2,prt_in,50,105
+prontera,134,221,0	warp	W-prontera-9	1,1,prt_in,131,71
+prontera,177,224,0	warp	W-prontera-10	2,2,prt_in,168,128
+prontera,177,187,0	warp	W-prontera-11	2,2,prt_in,60,73
+prontera,192,267,0	warp	W-prontera-12	2,2,prt_in,178,55
+prontera,204,192,0	warp	W-prontera-13	2,2,prt_in,68,134
+prontera,208,154,0	warp	W-prontera-14	2,2,prt_in,172,29
+prontera,42,67,0	warp	W-prontera-15	2,2,prt_in,44,29
+prontera,45,346,0	warp	W-prontera-16	2,2,prt_in,80,110
+prontera,73,100,0	warp	W-prontera-17	1,1,prt_in,208,176
+prontera,74,90,0	warp	W-prontera-18	2,2,prt_in,248,170
+prontera,84,89,0	warp	W-prontera-19	1,1,prt_in,282,176
+
+//普隆德拉 教堂
+prt_church,100,56,0	warp	W-prt_church-1	7,1,prontera,234,314
+prt_church,90,81,0	warp	W-prt_church-2	1,2,prt_church,27,19
+prt_church,109,81,0	warp	W-prt_church-3	1,2,prt_church,172,19
+prt_church,168,19,0	warp	W-prt_church-4	1,2,prt_church,105,81
+prt_church,31,19,0	warp	W-prt_church-5	1,2,prt_church,94,81
+
+
+
+//普隆德拉 室内
+prt_in,135,71,0	warp	W-prt_in-1	1,2,prontera,136,219
+prt_in,168,124,0	warp	W-prt_in-2	2,1,prontera,174,218
+prt_in,172,33,0	warp	W-prt_in-3	2,1,prontera,205,157
+prt_in,181,55,0	warp	W-prt_in-4	1,2,prontera,192,264
+prt_in,183,97,0	warp	W-prt_in-5	1,2,prontera,120,264
+prt_in,208,179,0	warp	W-prt_in-6	3,1,prontera,76,102
+prt_in,240,141,0	warp	W-prt_in-7	3,1,prontera,107,218
+prt_in,248,173,0	warp	W-prt_in-8	3,2,prontera,77,93
+prt_in,282,179,0	warp	W-prt_in-9	3,1,prontera,87,91
+prt_in,47,29,0	warp	W-prt_in-10	2,1,prontera,46,67
+prt_in,53,105,0	warp	W-prt_in-11	1,2,prontera,136,186
+prt_in,60,77,0	warp	W-prt_in-12	2,1,prontera,174,189
+prt_in,68,130,0	warp	W-prt_in-13	2,1,prontera,204,188
+prt_in,80,113,0	warp	W-prt_in-14	2,1,prontera,48,343
+prt_in,217,163,0	warp	W-prt_in-15	1,3,prt_in,236,163
+prt_in,234,163,0	warp	W-prt_in-16	1,3,prt_in,215,163
+prt_in,254,113,0	warp	W-prt_in-17	3,2,prt_in,256,134
+prt_in,256,131,0	warp	W-prt_in-18	2,2,prt_in,254,110
+prt_in,263,163,0	warp	W-prt_in-19	1,3,prt_in,276,163
+prt_in,274,163,0	warp	W-prt_in-20	1,3,prt_in,261,163
+prt_in,37,65,0	warp	W-prt_in-21	1,3,prt_in,51,65
+prt_in,48,65,0	warp	W-prt_in-22	1,3,prt_in,34,65
+prt_in,69,65,0	warp	W-prt_in-23	1,3,prt_in,84,65
+prt_in,70,143,0	warp	W-prt_in-24	2,1,prt_in,70,165
+prt_in,70,162,0	warp	W-prt_in-25	2,1,prt_in,70,140
+prt_in,82,65,0	warp	W-prt_in-26	1,3,prt_in,66,65

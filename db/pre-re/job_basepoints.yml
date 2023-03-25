@@ -1,0 +1,944 @@
+# This file is a part of rAthena.
+#   Copyright(C) 2021 rAthena Development Team
+#   https://rathena.org - https://github.com/rathena
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program. If not, see <http://www.gnu.org/licenses/>.
+#
+###########################################################################
+# Job Database
+###########################################################################
+#
+# Job Settings
+#
+###########################################################################
+# - Jobs:                    List of jobs associated to group.
+#     Job                    Job name.
+#   MaxWeight                Base maximum weight. (Default: 20000)
+#   HPFactor                 HP increase per base Level. Floor(HPFactor / 100) * BaseLv. Used when macro HP_SP_TABLES is disabled. (Default: 20000)
+#   HPMultiplicator          Base HP value. 35 + BaseLv * (HPMultiplicator / 100). Used when macro HP_SP_TABLES is disabled. (Default: 500)
+#   SPFactor                 SP increase per job Level. Floor(SPFactor / 100) * BaseLv. Used when macro HP_SP_TABLES is disabled. (Default: 100)
+#   BaseASPD:                Base ASPD for each weapon type. (Default: 2000)
+#     Weapon                 Weapon type with associated ASPD.
+#   BonusStats:              Job Level bonus stats/traits.
+#     - Level                Job Level.
+#       Str                  Stength increase amount. (Default: 0)
+#       Agi                  Agility increase amount. (Default: 0)
+#       Vit                  Vitality increase amount. (Default: 0)
+#       Int                  Intelligence increase amount. (Default: 0)
+#       Dex                  Dexterity increase amount. (Default: 0)
+#       Luk                  Luck increase amount. (Default: 0)
+#       Pow                  Power increase amount. (Default: 0)
+#       Sta                  Stamina increase amount. (Default: 0)
+#       Wis                  Wisdom increase amount. (Default: 0)
+#       Spl                  Spell increase amount. (Default: 0)
+#       Con                  Concentration increase amount. (Default: 0)
+#       Crt                  Creative increase amount. (Default: 0)
+#   MaxStats:                Maximum stats/traits applicable. (Default: battle_config::max_*_parameter)
+#     Str                    Strength.
+#     Agi                    Agility.
+#     Vit                    Vitality.
+#     Int                    Intelligence.
+#     Dex                    Dexterity.
+#     Luk                    Luck.
+#     Pow                    Power.
+#     Sta                    Stamina.
+#     Wis                    Wisdom.
+#     Spl                    Spell.
+#     Con                    Concentration.
+#     Crt                    Creative.
+#   MaxBaseLevel             Maximum base Level. (Default: MAX_LEVEL)
+#   BaseExp:                 Base experience per Level.
+#     - Level                Base Level.
+#       Exp                  Base experience.
+#   MaxJobLevel              Maximum job Level. (Default: MAX_LEVEL)
+#   JobExp:                  Job experience per Level.
+#     - Level                Job Level.
+#       Exp                  Job experience.
+#   BaseHp:                  Base HP per base Level.
+#     - Level                Base Level.
+#       Hp                   Base HP.
+#   BaseSp:                  Base SP per base Level.
+#     - Level                Base Level.
+#       Sp                   Base SP.
+#   BaseAp:                  Base AP per base Level.
+#     - Level                Base Level.
+#       Ap                   Base AP.
+###########################################################################
+
+Header:
+  Type: JOB_STATS
+  Version: 1
+
+Body:
+  - Jobs:
+      Novice: true
+    BaseHp:
+      - Level: 1
+        Hp: 50
+      - Level: 2
+        Hp: 55
+      - Level: 3
+        Hp: 60
+      - Level: 4
+        Hp: 65
+      - Level: 5
+        Hp: 70
+      - Level: 6
+        Hp: 75
+      - Level: 7
+        Hp: 80
+      - Level: 8
+        Hp: 85
+      - Level: 9
+        Hp: 90
+      - Level: 10
+        Hp: 100
+      - Level: 11
+        Hp: 105
+      - Level: 12
+        Hp: 110
+      - Level: 13
+        Hp: 115
+      - Level: 14
+        Hp: 120
+      - Level: 15
+        Hp: 126
+      - Level: 16
+        Hp: 132
+      - Level: 17
+        Hp: 138
+      - Level: 18
+        Hp: 144
+      - Level: 19
+        Hp: 151
+      - Level: 20
+        Hp: 158
+      - Level: 21
+        Hp: 165
+      - Level: 22
+        Hp: 173
+      - Level: 23
+        Hp: 181
+      - Level: 24
+        Hp: 190
+      - Level: 25
+        Hp: 199
+      - Level: 26
+        Hp: 208
+      - Level: 27
+        Hp: 218
+      - Level: 28
+        Hp: 228
+      - Level: 29
+        Hp: 239
+      - Level: 30
+        Hp: 250
+      - Level: 31
+        Hp: 262
+      - Level: 32
+        Hp: 275
+      - Level: 33
+        Hp: 288
+      - Level: 34
+        Hp: 302
+      - Level: 35
+        Hp: 317
+      - Level: 36
+        Hp: 332
+      - Level: 37
+        Hp: 348
+      - Level: 38
+        Hp: 365
+      - Level: 39
+        Hp: 383
+      - Level: 40
+        Hp: 402
+      - Level: 41
+        Hp: 422
+      - Level: 42
+        Hp: 443
+      - Level: 43
+        Hp: 465
+      - Level: 44
+        Hp: 488
+      - Level: 45
+        Hp: 512
+      - Level: 46
+        Hp: 537
+      - Level: 47
+        Hp: 563
+      - Level: 48
+        Hp: 591
+      - Level: 49
+        Hp: 620
+      - Level: 50
+        Hp: 651
+      - Level: 51
+        Hp: 683
+      - Level: 52
+        Hp: 717
+      - Level: 53
+        Hp: 752
+      - Level: 54
+        Hp: 789
+      - Level: 55
+        Hp: 828
+      - Level: 56
+        Hp: 869
+      - Level: 57
+        Hp: 912
+      - Level: 58
+        Hp: 957
+      - Level: 59
+        Hp: 1004
+      - Level: 60
+        Hp: 1054
+  - Jobs:
+      Swordman: true
+    BaseHp:
+      - Level: 1
+        Hp: 50
+      - Level: 2
+        Hp: 55
+      - Level: 3
+        Hp: 60
+      - Level: 4
+        Hp: 65
+      - Level: 5
+        Hp: 70
+      - Level: 6
+        Hp: 75
+      - Level: 7
+        Hp: 80
+      - Level: 8
+        Hp: 85
+      - Level: 9
+        Hp: 90
+      - Level: 10
+        Hp: 100
+      - Level: 11
+        Hp: 108
+      - Level: 12
+        Hp: 116
+      - Level: 13
+        Hp: 125
+      - Level: 14
+        Hp: 135
+      - Level: 15
+        Hp: 145
+      - Level: 16
+        Hp: 156
+      - Level: 17
+        Hp: 168
+      - Level: 18
+        Hp: 181
+      - Level: 19
+        Hp: 195
+      - Level: 20
+        Hp: 210
+      - Level: 21
+        Hp: 226
+      - Level: 22
+        Hp: 244
+      - Level: 23
+        Hp: 263
+      - Level: 24
+        Hp: 284
+      - Level: 25
+        Hp: 306
+      - Level: 26
+        Hp: 330
+      - Level: 27
+        Hp: 356
+      - Level: 28
+        Hp: 384
+      - Level: 29
+        Hp: 414
+      - Level: 30
+        Hp: 447
+      - Level: 31
+        Hp: 482
+      - Level: 32
+        Hp: 520
+      - Level: 33
+        Hp: 561
+      - Level: 34
+        Hp: 605
+      - Level: 35
+        Hp: 653
+      - Level: 36
+        Hp: 705
+      - Level: 37
+        Hp: 761
+      - Level: 38
+        Hp: 821
+      - Level: 39
+        Hp: 886
+      - Level: 40
+        Hp: 956
+      - Level: 41
+        Hp: 1032
+      - Level: 42
+        Hp: 1114
+      - Level: 43
+        Hp: 1203
+      - Level: 44
+        Hp: 1299
+      - Level: 45
+        Hp: 1402
+      - Level: 46
+        Hp: 1514
+      - Level: 47
+        Hp: 1635
+      - Level: 48
+        Hp: 1765
+      - Level: 49
+        Hp: 1906
+      - Level: 50
+        Hp: 2058
+      - Level: 51
+        Hp: 2222
+      - Level: 52
+        Hp: 2399
+      - Level: 53
+        Hp: 2590
+      - Level: 54
+        Hp: 2797
+      - Level: 55
+        Hp: 3020
+      - Level: 56
+        Hp: 3261
+      - Level: 57
+        Hp: 3521
+      - Level: 58
+        Hp: 3802
+      - Level: 59
+        Hp: 4106
+      - Level: 60
+        Hp: 4434
+  - Jobs:
+      Mage: true
+    BaseHp:
+      - Level: 1
+        Hp: 50
+      - Level: 2
+        Hp: 55
+      - Level: 3
+        Hp: 60
+      - Level: 4
+        Hp: 65
+      - Level: 5
+        Hp: 70
+      - Level: 6
+        Hp: 75
+      - Level: 7
+        Hp: 80
+      - Level: 8
+        Hp: 85
+      - Level: 9
+        Hp: 90
+      - Level: 10
+        Hp: 100
+      - Level: 11
+        Hp: 107
+      - Level: 12
+        Hp: 115
+      - Level: 13
+        Hp: 124
+      - Level: 14
+        Hp: 133
+      - Level: 15
+        Hp: 143
+      - Level: 16
+        Hp: 154
+      - Level: 17
+        Hp: 165
+      - Level: 18
+        Hp: 177
+      - Level: 19
+        Hp: 190
+      - Level: 20
+        Hp: 204
+      - Level: 21
+        Hp: 219
+      - Level: 22
+        Hp: 235
+      - Level: 23
+        Hp: 252
+      - Level: 24
+        Hp: 270
+      - Level: 25
+        Hp: 289
+      - Level: 26
+        Hp: 309
+      - Level: 27
+        Hp: 331
+      - Level: 28
+        Hp: 354
+      - Level: 29
+        Hp: 378
+      - Level: 30
+        Hp: 404
+      - Level: 31
+        Hp: 431
+      - Level: 32
+        Hp: 460
+      - Level: 33
+        Hp: 491
+      - Level: 34
+        Hp: 524
+      - Level: 35
+        Hp: 558
+      - Level: 36
+        Hp: 594
+      - Level: 37
+        Hp: 632
+      - Level: 38
+        Hp: 673
+      - Level: 39
+        Hp: 716
+      - Level: 40
+        Hp: 761
+      - Level: 41
+        Hp: 809
+      - Level: 42
+        Hp: 859
+      - Level: 43
+        Hp: 912
+      - Level: 44
+        Hp: 968
+      - Level: 45
+        Hp: 1027
+      - Level: 46
+        Hp: 1089
+      - Level: 47
+        Hp: 1155
+      - Level: 48
+        Hp: 1224
+      - Level: 49
+        Hp: 1297
+      - Level: 50
+        Hp: 1374
+      - Level: 51
+        Hp: 1455
+      - Level: 52
+        Hp: 1540
+      - Level: 53
+        Hp: 1630
+      - Level: 54
+        Hp: 1725
+      - Level: 55
+        Hp: 1825
+      - Level: 56
+        Hp: 1930
+      - Level: 57
+        Hp: 2040
+      - Level: 58
+        Hp: 2156
+      - Level: 59
+        Hp: 2278
+      - Level: 60
+        Hp: 2406
+  - Jobs:
+      Archer: true
+    BaseHp:
+      - Level: 1
+        Hp: 50
+      - Level: 2
+        Hp: 55
+      - Level: 3
+        Hp: 60
+      - Level: 4
+        Hp: 65
+      - Level: 5
+        Hp: 70
+      - Level: 6
+        Hp: 75
+      - Level: 7
+        Hp: 80
+      - Level: 8
+        Hp: 85
+      - Level: 9
+        Hp: 90
+      - Level: 10
+        Hp: 100
+      - Level: 11
+        Hp: 108
+      - Level: 12
+        Hp: 117
+      - Level: 13
+        Hp: 127
+      - Level: 14
+        Hp: 138
+      - Level: 15
+        Hp: 149
+      - Level: 16
+        Hp: 161
+      - Level: 17
+        Hp: 174
+      - Level: 18
+        Hp: 188
+      - Level: 19
+        Hp: 203
+      - Level: 20
+        Hp: 219
+      - Level: 21
+        Hp: 236
+      - Level: 22
+        Hp: 255
+      - Level: 23
+        Hp: 275
+      - Level: 24
+        Hp: 296
+      - Level: 25
+        Hp: 319
+      - Level: 26
+        Hp: 343
+      - Level: 27
+        Hp: 369
+      - Level: 28
+        Hp: 396
+      - Level: 29
+        Hp: 425
+      - Level: 30
+        Hp: 456
+      - Level: 31
+        Hp: 489
+      - Level: 32
+        Hp: 524
+      - Level: 33
+        Hp: 561
+      - Level: 34
+        Hp: 600
+      - Level: 35
+        Hp: 641
+      - Level: 36
+        Hp: 685
+      - Level: 37
+        Hp: 731
+      - Level: 38
+        Hp: 780
+      - Level: 39
+        Hp: 832
+      - Level: 40
+        Hp: 886
+      - Level: 41
+        Hp: 943
+      - Level: 42
+        Hp: 1004
+      - Level: 43
+        Hp: 1068
+      - Level: 44
+        Hp: 1136
+      - Level: 45
+        Hp: 1207
+      - Level: 46
+        Hp: 1282
+      - Level: 47
+        Hp: 1361
+      - Level: 48
+        Hp: 1445
+      - Level: 49
+        Hp: 1533
+      - Level: 50
+        Hp: 1626
+      - Level: 51
+        Hp: 1724
+      - Level: 52
+        Hp: 1827
+      - Level: 53
+        Hp: 1936
+      - Level: 54
+        Hp: 2050
+      - Level: 55
+        Hp: 2170
+      - Level: 56
+        Hp: 2297
+      - Level: 57
+        Hp: 2430
+      - Level: 58
+        Hp: 2570
+      - Level: 59
+        Hp: 2718
+      - Level: 60
+        Hp: 2873
+  - Jobs:
+      Acolyte: true
+    BaseHp:
+      - Level: 1
+        Hp: 50
+      - Level: 2
+        Hp: 55
+      - Level: 3
+        Hp: 60
+      - Level: 4
+        Hp: 65
+      - Level: 5
+        Hp: 70
+      - Level: 6
+        Hp: 75
+      - Level: 7
+        Hp: 80
+      - Level: 8
+        Hp: 85
+      - Level: 9
+        Hp: 90
+      - Level: 10
+        Hp: 100
+      - Level: 11
+        Hp: 107
+      - Level: 12
+        Hp: 115
+      - Level: 13
+        Hp: 124
+      - Level: 14
+        Hp: 133
+      - Level: 15
+        Hp: 143
+      - Level: 16
+        Hp: 154
+      - Level: 17
+        Hp: 165
+      - Level: 18
+        Hp: 177
+      - Level: 19
+        Hp: 190
+      - Level: 20
+        Hp: 204
+      - Level: 21
+        Hp: 219
+      - Level: 22
+        Hp: 235
+      - Level: 23
+        Hp: 252
+      - Level: 24
+        Hp: 270
+      - Level: 25
+        Hp: 289
+      - Level: 26
+        Hp: 309
+      - Level: 27
+        Hp: 331
+      - Level: 28
+        Hp: 354
+      - Level: 29
+        Hp: 378
+      - Level: 30
+        Hp: 404
+      - Level: 31
+        Hp: 431
+      - Level: 32
+        Hp: 460
+      - Level: 33
+        Hp: 491
+      - Level: 34
+        Hp: 524
+      - Level: 35
+        Hp: 558
+      - Level: 36
+        Hp: 594
+      - Level: 37
+        Hp: 632
+      - Level: 38
+        Hp: 673
+      - Level: 39
+        Hp: 716
+      - Level: 40
+        Hp: 761
+      - Level: 41
+        Hp: 809
+      - Level: 42
+        Hp: 859
+      - Level: 43
+        Hp: 912
+      - Level: 44
+        Hp: 968
+      - Level: 45
+        Hp: 1027
+      - Level: 46
+        Hp: 1089
+      - Level: 47
+        Hp: 1155
+      - Level: 48
+        Hp: 1224
+      - Level: 49
+        Hp: 1297
+      - Level: 50
+        Hp: 1374
+      - Level: 51
+        Hp: 1455
+      - Level: 52
+        Hp: 1540
+      - Level: 53
+        Hp: 1630
+      - Level: 54
+        Hp: 1725
+      - Level: 55
+        Hp: 1825
+      - Level: 56
+        Hp: 1930
+      - Level: 57
+        Hp: 2040
+      - Level: 58
+        Hp: 2156
+      - Level: 59
+        Hp: 2278
+      - Level: 60
+        Hp: 2406
+  - Jobs:
+      Merchant: true
+    BaseHp:
+      - Level: 1
+        Hp: 50
+      - Level: 2
+        Hp: 55
+      - Level: 3
+        Hp: 60
+      - Level: 4
+        Hp: 65
+      - Level: 5
+        Hp: 70
+      - Level: 6
+        Hp: 75
+      - Level: 7
+        Hp: 80
+      - Level: 8
+        Hp: 85
+      - Level: 9
+        Hp: 90
+      - Level: 10
+        Hp: 100
+      - Level: 11
+        Hp: 108
+      - Level: 12
+        Hp: 117
+      - Level: 13
+        Hp: 127
+      - Level: 14
+        Hp: 138
+      - Level: 15
+        Hp: 149
+      - Level: 16
+        Hp: 161
+      - Level: 17
+        Hp: 174
+      - Level: 18
+        Hp: 188
+      - Level: 19
+        Hp: 203
+      - Level: 20
+        Hp: 219
+      - Level: 21
+        Hp: 236
+      - Level: 22
+        Hp: 255
+      - Level: 23
+        Hp: 275
+      - Level: 24
+        Hp: 296
+      - Level: 25
+        Hp: 319
+      - Level: 26
+        Hp: 343
+      - Level: 27
+        Hp: 369
+      - Level: 28
+        Hp: 396
+      - Level: 29
+        Hp: 425
+      - Level: 30
+        Hp: 456
+      - Level: 31
+        Hp: 489
+      - Level: 32
+        Hp: 524
+      - Level: 33
+        Hp: 561
+      - Level: 34
+        Hp: 600
+      - Level: 35
+        Hp: 641
+      - Level: 36
+        Hp: 685
+      - Level: 37
+        Hp: 731
+      - Level: 38
+        Hp: 780
+      - Level: 39
+        Hp: 832
+      - Level: 40
+        Hp: 886
+      - Level: 41
+        Hp: 943
+      - Level: 42
+        Hp: 1004
+      - Level: 43
+        Hp: 1068
+      - Level: 44
+        Hp: 1136
+      - Level: 45
+        Hp: 1207
+      - Level: 46
+        Hp: 1282
+      - Level: 47
+        Hp: 1361
+      - Level: 48
+        Hp: 1445
+      - Level: 49
+        Hp: 1533
+      - Level: 50
+        Hp: 1626
+      - Level: 51
+        Hp: 1724
+      - Level: 52
+        Hp: 1827
+      - Level: 53
+        Hp: 1936
+      - Level: 54
+        Hp: 2050
+      - Level: 55
+        Hp: 2170
+      - Level: 56
+        Hp: 2297
+      - Level: 57
+        Hp: 2430
+      - Level: 58
+        Hp: 2570
+      - Level: 59
+        Hp: 2718
+      - Level: 60
+        Hp: 2873
+  - Jobs:
+      Thief: true
+    BaseHp:
+      - Level: 1
+        Hp: 50
+      - Level: 2
+        Hp: 55
+      - Level: 3
+        Hp: 60
+      - Level: 4
+        Hp: 65
+      - Level: 5
+        Hp: 70
+      - Level: 6
+        Hp: 75
+      - Level: 7
+        Hp: 80
+      - Level: 8
+        Hp: 85
+      - Level: 9
+        Hp: 90
+      - Level: 10
+        Hp: 100
+      - Level: 11
+        Hp: 108
+      - Level: 12
+        Hp: 117
+      - Level: 13
+        Hp: 127
+      - Level: 14
+        Hp: 138
+      - Level: 15
+        Hp: 149
+      - Level: 16
+        Hp: 161
+      - Level: 17
+        Hp: 174
+      - Level: 18
+        Hp: 188
+      - Level: 19
+        Hp: 203
+      - Level: 20
+        Hp: 219
+      - Level: 21
+        Hp: 236
+      - Level: 22
+        Hp: 255
+      - Level: 23
+        Hp: 275
+      - Level: 24
+        Hp: 296
+      - Level: 25
+        Hp: 319
+      - Level: 26
+        Hp: 343
+      - Level: 27
+        Hp: 369
+      - Level: 28
+        Hp: 396
+      - Level: 29
+        Hp: 425
+      - Level: 30
+        Hp: 456
+      - Level: 31
+        Hp: 489
+      - Level: 32
+        Hp: 524
+      - Level: 33
+        Hp: 561
+      - Level: 34
+        Hp: 600
+      - Level: 35
+        Hp: 641
+      - Level: 36
+        Hp: 685
+      - Level: 37
+        Hp: 731
+      - Level: 38
+        Hp: 780
+      - Level: 39
+        Hp: 832
+      - Level: 40
+        Hp: 886
+      - Level: 41
+        Hp: 943
+      - Level: 42
+        Hp: 1004
+      - Level: 43
+        Hp: 1068
+      - Level: 44
+        Hp: 1136
+      - Level: 45
+        Hp: 1207
+      - Level: 46
+        Hp: 1282
+      - Level: 47
+        Hp: 1361
+      - Level: 48
+        Hp: 1445
+      - Level: 49
+        Hp: 1533
+      - Level: 50
+        Hp: 1626
+      - Level: 51
+        Hp: 1724
+      - Level: 52
+        Hp: 1827
+      - Level: 53
+        Hp: 1936
+      - Level: 54
+        Hp: 2050
+      - Level: 55
+        Hp: 2170
+      - Level: 56
+        Hp: 2297
+      - Level: 57
+        Hp: 2430
+      - Level: 58
+        Hp: 2570
+      - Level: 59
+        Hp: 2718
+      - Level: 60
+        Hp: 2873

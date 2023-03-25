@@ -1,0 +1,209 @@
+//callfunc "lpig_enter_instance",instance_name$,instance_mode;
+function	script	lpig_enter_instance	{
+	switch(instance_enter(getarg(0)))
+	{
+		case IE_OK:
+			return 1;
+		case IE_NOMEMBER:
+			switch(getarg(1))
+			{
+				case IM_PARTY:
+					dispbottom "[ "+getarg(0)+" ] 副本需要组队进入.";
+					return 0;
+				case IM_GUILD:
+					dispbottom "[ "+getarg(0)+" ] 副本仅为公会成员开放.";
+					return 0;
+					
+			}
+			return 0;
+		case IE_NOINSTANCE:
+			dispbottom "[ "+getarg(0)+" ] 副本尚未创建.";
+			return 0;
+		case IE_OTHER:
+			dispbottom "[ "+getarg(0)+" ] 副本由于未知原因,无法进入.";
+			return 0;
+		default:
+			return 0;
+	}
+}
+//查询char_cd
+//callfunc "lpig_check_instance",c_id,instance_id;
+function	script	lpig_check_instance	{
+	query_sql "select instance_cd from lpig_instance_char_cd where char_id = '"+getarg(0)+"' and instance_id = '"+getarg(1)+"'",.@cd$;
+	return .@cd$;
+}
+//callfunc "lpig_create_instance_cd",instance_id;
+function	script	lpig_create_instance_cd	{
+	set .@time,gettimetick(2)/86400;
+	set .@instance_id,getarg(0);
+	set .@rand_1,rand(0,9);
+	set .@rand_2,rand(0,9);
+	set .@rand_3,rand(1000,9999);
+	set .@instance_cd$,""+.@time+.@rand_1+.@instance_id+.@rand_2+(gettimetick(2)%86400)+.@rand_3+"";
+	return .@instance_cd$;
+}
+//副本cd写入char库
+//callfunc "lpig_insert_instance_cd",c_id,instance_id,instance_cd;
+function	script	lpig_insert_instance_cd	{
+	//查询cd库是否有此cd
+	query_sql "select instance_cd from lpig_instance_cd where instance_cd = '"+getarg(2)+"'",.@i_cd$;
+	dispbottom "i_cd "+.@i_cd$+"";
+	if(.@i_cd$ == "")
+	{
+		query_sql "insert into lpig_instance_cd values('"+getarg(2)+"','"+getarg(1)+"',0)";
+	}
+	//查询玩家是否有cd
+	query_sql "select instance_cd from lpig_instance_char_cd where char_id = '"+getarg(0)+"' and instance_id = '"+getarg(1)+"' and instance_cd = '"+getarg(2)+"'",.@cd$;
+	if(.@cd$ != "")
+	{
+		//玩家有cd
+		//清除玩家cd
+		query_sql "delete from lpig_instance_char_cd where char_id = '"+getarg(0)+"' and instance_id = '"+getarg(1)+"' and instance_cd = '"+.@cd$+"'";
+	}
+	//写入玩家cd
+	query_sql "insert into lpig_instance_char_cd VALUES('"+getarg(0)+"','"+getarg(2)+"','"+getarg(1)+"')";
+	return;
+}
+prt_fild01,182,374,4	script	北森入口	45,1,1,{
+	end;
+OnTouch:
+	if(instance_id(.instance_mode))
+	{
+		//副本已创建
+		//查询cd
+		set .@instance_cd$,callfunc("lpig_check_instance",getcharid(0),.instance_id);
+		if(.@instance_cd$ == "")
+		{
+			//无cd
+			//生成副本cd
+			set .@instance_cd$,callfunc("lpig_create_instance_cd",.instance_id);
+			//副本cd写入数据库
+			callfunc "lpig_insert_instance_cd",getcharid(0),.instance_id,.@instance_cd$;
+			//副本cd写入副本变量
+			setinstancevar('instance_cd$,.@instance_cd$,instance_id(.instance_mode));
+			//副本模式写入副本变量
+			setinstancevar('instance_mode,.instance_mode,instance_id(.instance_mode));
+			doevent instance_npcname("北森副本init",instance_id(.instance_mode))+"::OnInstance_init";
+		}
+		else
+		{
+			//有cd
+			//副本cd写入数据库
+			callfunc "lpig_insert_instance_cd",getcharid(0),.instance_id,.@instance_cd$;
+			//副本cd写入副本变量
+			setinstancevar('instance_cd$,.@instance_cd$,instance_id(.instance_mode));
+			//副本模式写入副本变量
+			setinstancevar('instance_mode,.instance_mode,instance_id(.instance_mode));
+			doevent instance_npcname("北森副本init",instance_id(.instance_mode))+"::OnInstance_init";
+		}
+	}
+	else
+	{
+		//副本未创建
+		//查询cd
+		set .@instance_cd$,callfunc("lpig_check_instance",getcharid(0),.instance_id);
+		if(.@instance_cd$ == "")
+		{
+			//无cd
+			//生成副本cd
+			set .@instance_cd$,callfunc("lpig_create_instance_cd",.instance_id);
+			//副本cd写入数据库
+			callfunc "lpig_insert_instance_cd",getcharid(0),.instance_id,.@instance_cd$;
+			//创建副本
+			instance_create(.instance_name$,.instance_mode);
+			//副本cd写入副本变量
+			setinstancevar('instance_cd$,.@instance_cd$,instance_id(.instance_mode));
+			//副本模式写入副本变量
+			setinstancevar('instance_mode,.instance_mode,instance_id(.instance_mode));
+			doevent instance_npcname("北森副本init",instance_id(.instance_mode))+"::OnInstance_init";
+		}
+		else
+		{
+			//有cd
+			//副本cd写入数据库
+			callfunc "lpig_insert_instance_cd",getcharid(0),.instance_id,.@instance_cd$;
+			//创建副本
+			instance_create(.instance_name$,.instance_mode);
+			//副本cd写入副本变量
+			setinstancevar('instance_cd$,.@instance_cd$,instance_id(.instance_mode));
+			//副本模式写入副本变量
+			setinstancevar('instance_mode,.instance_mode,instance_id(.instance_mode));
+			
+			doevent instance_npcname("北森副本init",instance_id(.instance_mode))+"::OnInstance_init";
+		}
+	}
+	dispbottom "执行判定";
+	set .@a,instance_enter(.instance_name$,-1,-1,getcharid(0),instance_id(.instance_mode));
+	dispbottom "副本进入返回值 "+.@a+"";
+OnInit:
+	//副本模式
+	set .instance_mode,IM_CHAR;
+	//副本id
+	set .instance_id,1;
+	//副本名
+	set .instance_name$,"北森";
+	end;
+}
+prt_maze01,104,58,0	script	test1	678,{
+	mes "第一部分完成,副本cd已更新";
+	close2;
+	//更新副本cd
+	query_sql "update lpig_instance_cd set instance_record=instance_record|1 where instance_cd = '"+'instance_cd$+"'";
+	disablenpc instance_npcname(strnpcinfo(0));
+	end;
+OnEnable:
+	enablenpc instance_npcname(strnpcinfo(0));
+	end;
+OnInstanceInit:
+OnDisable:
+	disablenpc instance_npcname(strnpcinfo(0));
+	end;
+}
+prt_maze01,104,56,0	script	test2	678,{
+	mes "第二部分完成,副本cd已更新";
+	close2;
+	//更新副本cd
+	query_sql "update lpig_instance_cd set instance_record=instance_record|2 where instance_cd = '"+'instance_cd$+"'";
+	disablenpc instance_npcname(strnpcinfo(0));
+	end;
+OnEnable:
+	enablenpc instance_npcname(strnpcinfo(0));
+	end;
+OnInstanceInit:
+OnDisable:
+	disablenpc instance_npcname(strnpcinfo(0));
+	end;
+}
+//副本初始化
+prt_maze01,104,58,0	script	北森副本init	-1,{
+	end;
+OnInstance_init:
+	//获取副本进度
+	query_sql "select instance_record from lpig_instance_cd where instance_cd = '"+'instance_cd$+"'",.@record;
+	for(set .@a,0;.@a<32;set .@a,.@a+1)
+	{
+		//if((.@record & (pow(2,.@a))) > 0)
+		switch(.@a)
+		{
+			case 0:
+				if((.@record & (pow(2,.@a))) == 0)
+				{
+					//生成序列1
+					//npc1出现
+					donpcevent instance_npcname("test1",instance_id('instance_mode))+"::OnEnable";
+				}
+				break;
+			case 1:
+				if((.@record & (pow(2,.@a))) == 0)
+				{
+					//生成序列2
+					//npc2出现
+					donpcevent instance_npcname("test2",instance_id('instance_mode))+"::OnEnable";
+					
+				}
+				break;
+			
+		}
+		
+	}
+}

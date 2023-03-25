@@ -1,0 +1,29 @@
+//==== Lpig script ===========================================
+//= Warp Point script
+//===== By: ==================================================
+//= Lpig
+//===== Current Version: =====================================
+//= 0.1
+//===== Compatible With: =====================================
+//= PandaWS Project
+//===== Description: =========================================
+//= Warp Points for alde_dun01,alde_dun02,alde_dun03
+//============================================================
+
+//艾尔帕兰 钟塔 地下1层
+alde_dun01,292,306,0	warp	W-alde_dun01-1	2,1,alde_dun02,43,24
+alde_dun01,302,25,0	warp	W-alde_dun01-2	2,2,c_tower1,125,22
+alde_dun01,167,158,0	warp	W-alde_dun01-3	2,2,c_tower2,148,283
+
+//艾尔帕兰 钟塔 地下2层
+alde_dun02,43,20,0	warp	W-alde_dun02-1	1,1,alde_dun01,292,300
+alde_dun02,279,250,0	warp	W-alde_dun02-2	2,2,alde_dun03,18,267
+alde_dun02,122,169,0	warp	W-alde_dun02-3	2,2,c_tower3,47,41
+alde_dun02,187,234,0	warp	W-alde_dun02-4	2,2,c_tower3,65,147
+
+//艾尔帕兰 钟塔 地下3层
+alde_dun03,12,267,0	warp	W-alde_dun03-1	2,2,alde_dun02,273,250
+alde_dun03,276,48,0	warp	W-alde_dun03-2	2,2,c_tower1,235,223
+alde_dun03,277,183,0	warp	W-alde_dun03-3	2,2,c_tower2,27,27
+alde_dun03,191,31,0	warp	W-alde_dun03-4	2,2,c_tower3,217,159
+

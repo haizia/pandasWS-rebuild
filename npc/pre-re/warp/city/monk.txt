@@ -1,0 +1,30 @@
+//==== Lpig script ===========================================
+//= Warp Point script
+//===== By: ==================================================
+//= Lpig
+//===== Current Version: =====================================
+//= 0.1
+//===== Compatible With: =====================================
+//= PandaWS Project
+//===== Description: =========================================
+//= Warp Points for izlude,izlude_in
+//============================================================
+
+//圣卡毕利那 修道院
+prt_monk,22,248,0	warp	monk001	2,2,prt_fild03,368,256
+prt_monk,245,106,0	warp	monk01	1,1,monk_in,98,30
+prt_monk,245,137,0	warp	monk02	1,1,monk_in,98,183
+
+//圣卡毕利那 修道院 室内
+monk_in,128,46,0	warp	monk03	1,3,monk_in,161,38
+monk_in,128,84,0	warp	monk04	1,3,monk_in,161,90
+monk_in,159,38,0	warp	monk03-1	1,3,monk_in,126,46
+monk_in,159,90,0	warp	monk04-1	1,3,monk_in,126,84
+monk_in,40,38,0	warp	monk05	1,3,monk_in,71,46
+monk_in,40,92,0	warp	monk06	1,3,monk_in,71,84
+monk_in,69,46,0	warp	monk05-1	1,3,monk_in,38,38
+monk_in,69,84,0	warp	monk06-1	1,3,monk_in,38,92
+monk_in,98,186,0	warp	monk02-1	3,2,prt_monk,245,139
+monk_in,98,27,0	warp	monk01-1	5,2,prt_monk,245,104
+monk_in,99,102,0	warp	monk07	5,1,monk_in,99,143
+monk_in,99,141,0	warp	monk07-1	3,1,monk_in,99,100
