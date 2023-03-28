@@ -1,0 +1,109 @@
+//callfun "lpig_npc_nearcheck",pc_map$,pc_x,pc_y,npc_map$,npc_x,npc_y,range;
+function	script	lpig_npc_nearcheck	{
+	if(getarg(0) != getarg(3))
+	{
+		return 0;
+	}
+	set .@range,sqrt((getarg(1)-getarg(4))*(getarg(1)-getarg(4))+(getarg(2)-getarg(5))*((getarg(2)-getarg(5))));
+	if(.@range <getarg(6))
+	{
+		return 1;
+	}
+	else
+	{
+		return 0;
+	}
+}
+prt_fild01,183,368,4	script	copynpc	678,{
+OnMinute00:
+OnMinute01:
+OnMinute02:
+OnMinute03:
+OnMinute04:
+OnMinute05:
+OnMinute06:
+OnMinute07:
+OnMinute08:
+OnMinute09:
+OnMinute10:
+OnMinute11:
+OnMinute12:
+OnMinute13:
+OnMinute14:
+OnMinute15:
+OnMinute16:
+OnMinute17:
+OnMinute18:
+OnMinute19:
+OnMinute20:
+OnMinute21:
+OnMinute22:
+OnMinute23:
+OnMinute24:
+OnMinute25:
+OnMinute26:
+OnMinute27:
+OnMinute28:
+OnMinute29:
+OnMinute30:
+OnMinute31:
+OnMinute32:
+OnMinute33:
+OnMinute34:
+OnMinute35:
+OnMinute36:
+OnMinute37:
+OnMinute38:
+OnMinute39:
+OnMinute40:
+OnMinute41:
+OnMinute42:
+OnMinute43:
+OnMinute44:
+OnMinute45:
+OnMinute46:
+OnMinute47:
+OnMinute48:
+OnMinute49:
+OnMinute50:
+OnMinute51:
+OnMinute52:
+OnMinute53:
+OnMinute54:
+OnMinute55:
+OnMinute56:
+OnMinute57:
+OnMinute58:
+OnMinute59:
+	for(set .@a,0;.@a<getarraysize($subject_level);set .@a,.@a+1)
+	{
+		if(getd("$subject_prt_fild01_"+.@a)<=0)
+		{
+			copynpc $subject_mapname$[.@a],$subject_x[.@a],$subject_y[.@a],4,$subject_dup_name$[.@a],$subject_dis_name$[.@a]+"#"+.@a,$subject_view[.@a];
+			set getd("$subject_prt_fild01_"+.@a),$subject_renew[.@a];
+		}
+		else
+		{
+			set getd("$subject_"+$subject_mapname$[.@a]+"_"+.@a),getd("$subject_"+$subject_mapname$[.@a]+"_"+.@a)-1;
+		}
+	
+	}
+OnInit:
+	query_sql "select map_name,x,y,level,duplicate_name,display_name,view,renew from subject_db where map_name = 'prt_fild01'",$subject_mapname$,$subject_x,$subject_y,$subject_level,$subject_dup_name$,$subject_dis_name$,$subject_view,$subject_renew;
+	end;
+}
+-	script	²Ý	1078,{
+	getmapxy(.@map$,.@x,.@y,BL_PC);
+	getmapxy(.@npc_map$,.@npc_x,.@npc_y,BL_NPC);
+	if(callfunc("lpig_npc_nearcheck",.@map$,.@x,.@y,.@npc_map$,.@npc_x,.@npc_y,5))
+	{
+		progressbar "770000",1;
+		selfdeletion SELFDEL_WAITFREE;
+		end;
+	}
+	else
+	{
+		dispbottom "³¬¹ý¾àÀë";
+	}
+	end;
+}
